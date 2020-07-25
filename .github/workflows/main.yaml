@@ -1,0 +1,27 @@
+name: CI run
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 30
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: update packages
+      run: sudo apt update
+
+    # set up scala
+    - name: install scala
+      run: sudo apt install scala
+    # Runs the main script script
+    - name: Run script
+      run: ./run.sh
+
+      
