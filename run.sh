@@ -1,11 +1,8 @@
 #!/bin/bash
 start=`date +%s`
 
-printf "\nRunning the Scala version : \n"
-scala -nc mergesort.scala
-
-printf "\nRunning the Scala version : \n"
-yabasic hello.bas
+printf "\nRunning basic version : \n"
+rm -f mergesort && fbc mergesort.bas && ./mergesort
 
 end=`date +%s`
 runtime=$((end-start))
