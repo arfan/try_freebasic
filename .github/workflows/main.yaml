@@ -23,8 +23,7 @@ jobs:
 
     # set up Basic
     - name : install yabasic
-    run : |    
-      sudo apt-get install yabasic
+      run : sudo apt install yabasic
 
     # Runs the main script script
     - name: Run script
